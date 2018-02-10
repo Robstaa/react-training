@@ -3,13 +3,16 @@ import './App.css';
 import Flat from './components/flat.js';
 import GoogleMapReact from 'google-map-react';
 import Marker from "./components/marker.js"
+import Search from "./components/search.js"
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       exampleFlats: [],
-      selectedFlat: null
+      allFlats: [],
+      selectedFlat: null,
+      search: ""
     };
   }
 
@@ -18,7 +21,8 @@ class App extends Component {
       .then(response => response.json())
       .then((data) => {
         this.setState({
-          exampleFlats: data
+          exampleFlats: data,
+          allFlats: data
         })
       })
   };
@@ -27,6 +31,14 @@ class App extends Component {
     this.setState({
       selectedFlat: flat
     })
+  }
+
+  handleSearch = (event) => {
+    console.log(event);
+    this.setState({
+      search: event.target.value,
+      exampleFlats: this.state.allFlats.filter((flat) => new RegExp(event.target.value, "i").exec(flat.name))
+    });
   }
 
   render() {
@@ -48,6 +60,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className ="flats">
+        <Search value={this.state.search} onChange={this.handleSearch} ></Search>
           {this.state.exampleFlats.map((flat) => {
 
               return <Flat
