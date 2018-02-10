@@ -7,3 +7,9 @@
   padding: 3px;
   font-size: 14px;
 }
+
+.selectedMarker {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
