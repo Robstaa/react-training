@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Flat from './components/flat.js';
 import GoogleMapReact from 'google-map-react';
+import Marker from "./components/marker.js"
 
 class App extends Component {
   constructor(props) {
@@ -23,22 +24,27 @@ class App extends Component {
 
   render() {
     const center = {
-      lat: 59.955413,
-      lng: 30.337844
+      lat: 48.8566,
+      lng: 2.3522
     }
+
     return (
       <div className="app">
         <div className ="flats">
           {this.state.exampleFlats.map((flat) => {
             return <Flat flat={flat} />
           })}
-
         </div>
+
         <div className="map">
         <GoogleMapReact
           center={center}
           zoom={11}
-        ></GoogleMapReact>
+        >
+          {this.state.exampleFlats.map((flat) => {
+            return <Marker lat={flat.lat} lng={flat.lng} text={flat.price} curr={flat.priceCurrency} />
+          })}
+        </GoogleMapReact>
         </div>
       </div>
     );
