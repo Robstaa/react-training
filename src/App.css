@@ -26,3 +26,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.app {
+  display: flex;
+}
+
+.flats {
+  display: flex;
+  flex-basis: 60%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.map {
+  flex-grow: 1;
+  height: 100vh;
+  top: 0;
+  position: sticky;
+  background-color: green;
+}
