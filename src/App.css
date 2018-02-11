@@ -36,6 +36,7 @@
   flex-basis: 60%;
   flex-wrap: wrap;
   align-content: flex-start;
+  justify-content: flex-start;
 }
 
 .map {
@@ -43,5 +44,5 @@
   height: 100vh;
   top: 0;
   position: sticky;
-  background-color: green;
+  background-color: grey;
 }

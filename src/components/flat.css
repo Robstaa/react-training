@@ -1,5 +1,9 @@
 .flat {
-
+  margin: 10px;
+  max-width: 350px;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.6);
+  padding: 3px;
 }
 
 .flat:hover {
@@ -11,8 +15,9 @@
   height: 200px;
   background-size: cover;
   background-position: center;
+  border-radius: 5px;
 }
 
 .flat-title {
-  margin: 10px 0;
+  margin: 10px 5px;
 }
