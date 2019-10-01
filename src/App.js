@@ -59,6 +59,7 @@ class App extends Component {
 
     return (
       <div className="app">
+        <h1>This is an update</h1>
         <div className ="flats">
         <Search value={this.state.search} onChange={this.handleSearch} ></Search>
           {this.state.exampleFlats.map((flat) => {
